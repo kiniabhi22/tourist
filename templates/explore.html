@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="{% static 'CSS/explore.css' %}" />
+
+    <!-- bootstrap css -->
+</head>
+<body>
+    {% include 'header.html'%}
+    <div class="complete" id="complete">
+        <h1>Ready To Roam India</h1>
+        <div class="parent1">
+            {% for i in obj %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <img src="{{i.image.url}}" alt="">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.desc}}</p>
+                  <p class="card-text">{{i.days}}</p>
+                  <p class="card-text">{{i.cost}}</p>
+                  {% if i.offer %}
+                  <p class="card-text">{{i.offer}}</p>
+                  <a href="#" class="btn btn-primary">Book My Ticket Now</a>
+                </div>
+                  {% endif%}
+
+                </div>
+              </div>
+              
+            {% endfor%}
+              
+        </div>
+        {% if user.is_staff %}:
+          <a href="{% url 'add' %}">Add City</a>
+
+        {%endif%}
+</body>
+<!-- js link -->
+<!-- <script src="{% static 'js/index.js' %}"></script> -->
+</html>

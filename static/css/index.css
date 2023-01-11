@@ -1,0 +1,17 @@
+.intro{
+    background-color: rgb(72, 225, 230);
+    padding: 30px;
+
+}
+.intro h1
+{
+    text-align: center;
+    padding: 20px;
+}
+p
+{
+text-align: justify;
+}
+h1{
+    color: brown;
+}
